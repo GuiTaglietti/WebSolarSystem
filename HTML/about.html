@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Solar System Info - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="homepage.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <div class="spaceBackground">
+      <input type="checkbox" id="active" />
+      <label for="active" class="menu-btn"><span></span></label>
+      <label for="active" class="close"></label>
+      <div class="wrapper">
+        <ul>
+          <li>
+            <a
+              onclick="transitionToPage('solarsystem.html')"
+              style="cursor: pointer"
+              >Explore</a
+            >
+          </li>
+          <li>
+            <a onclick="transitionToPage('index.html')" style="cursor: pointer"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a onclick="transitionToPage('form.html')" style="cursor: pointer"
+              >Feedback</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/GuiTaglietti" target="_blank">Github</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <div class="containerText">
+          <h1 contenteditable class="titleAbout">About the project</h1>
+          <p>
+            The interactive solar system was a personal project that came as an
+            idea to mix two things i always liked: Universe and programming.
+          </p>
+          <br />
+          <br />
+          <p>
+            The aim, in addition to improving web development, is to help people
+            learn more about our neighboring planets using an interactive
+            website. My plan is to update the site with new features and cool
+            stuff over time.
+          </p>
+          <br />
+          <br />
+          <p>
+            I'm really glad you came to visit the project, the project is on my
+            GitHub if you want to contribute a star.
+          </p>
+          <br />
+          <br />
+          <p>
+            Enjoy all the content on the site and feel free to suggest ideas and
+            help with the project!
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

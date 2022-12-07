@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Solar System Info - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="homepage.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <div class="spaceBackground">
+      <input type="checkbox" id="active" />
+      <label for="active" class="menu-btn"><span></span></label>
+      <label for="active" class="close"></label>
+      <div class="wrapper">
+        <ul>
+          <li>
+            <a
+              onclick="transitionToPage('solarsystem.html')"
+              style="cursor: pointer"
+              >Explore</a
+            >
+          </li>
+          <li>
+            <a onclick="transitionToPage('about.html')" style="cursor: pointer"
+              >About</a
+            >
+          </li>
+          <li>
+            <a onclick="transitionToPage('index.html')" style="cursor: pointer"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/GuiTaglietti" target="_blank">Github</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <form action="form.php" method="post">
+          <div class="form">
+            <div class="titleForm">Contact me!</div>
+            <div class="subtitleForm">Send me a feedback message...</div>
+            <div class="input-container ic1">
+              <input id="firstname" class="input" type="text" name="personname" placeholder=" " />
+              <div class="cut"></div>
+              <label for="firstname" class="placeholder">Full name</label>
+            </div>
+            <div class="input-container ic2">
+              <input id="lastname" class="input" type="text" name="personmessage" placeholder=" " />
+              <div class="cut"></div>
+              <label for="lastname" class="placeholder">Message</label>
+            </div>
+            <div class="input-container ic2">
+              <input id="email" class="input" type="text" name="personmail" placeholder=" " />
+              <div class="cut cut-short"></div>
+              <label for="email" class="placeholder">Email</label>
+            </div>
+            <button type="text" class="submit">Send me!</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
