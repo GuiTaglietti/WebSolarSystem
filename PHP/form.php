@@ -27,11 +27,11 @@ class FormValidate
             $formEmail = addslashes($_POST["personmail"]);
             $formMessage = addslashes($_POST["personmessage"]);
 
-            $to = "alucardloko3900@gmail.com";
-            $subject = "Sistema solar interativo - Formulário";
-            $body = "Nome: $formName \r\n
+            $to = "solarsystemproject@gmail.com";
+            $subject = "Interactive solar system - Feedback";
+            $body = "Name: $formName \r\n
             Email: $formEmail \r\n
-            Mensagem: $formMessage";
+            Message: $formMessage";
 
             $header = "From: " . $formEmail . "\r\n"
                 . "Reply-To: " . $formEmail . "\r\n"
