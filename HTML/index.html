@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Solar System Info - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="homepage.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <div class="spaceBackground">
+      <input type="checkbox" id="active" />
+      <label for="active" class="menu-btn"><span></span></label>
+      <label for="active" class="close"></label>
+      <div class="wrapper">
+        <ul>
+          <li>
+            <a
+              onclick="transitionToPage('solarsystem.html')"
+              style="cursor: pointer"
+              >Explore</a
+            >
+          </li>
+          <li>
+            <a onclick="transitionToPage('about.html')" style="cursor: pointer"
+              >About</a
+            >
+          </li>
+          <li>
+            <a onclick="transitionToPage('form.html')" style="cursor: pointer"
+              >Feedback</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/GuiTaglietti" target="_blank">Github</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <div class="title">Solar system interactive informations</div>
+        <p class="subtitle">Developed by: Gui Taglietti</p>
+        <span class="contButton"
+          ><a
+            onclick="transitionToPage('solarsystem.html')"
+            style="cursor: pointer"
+          ></a
+        ></span>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
