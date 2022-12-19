@@ -1,41 +1,21 @@
 <?php
 class FormValidate
 {
-    public $error = false;
-
-    private function handleErrors()
-    {
-        if (!isset($_POST) || empty($_POST)) {
-            $this->error = 'Nothing has been posted...';
-        }
-        foreach ($_POST as $key => $value) {
-            $$key = trim(strip_tags($value));
-            if (empty($value)) {
-                $this->error = 'Blank spaces posted...';
-            }
-        }
-        if ((!isset($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) && !$this->error) {
-            $this->error = 'Send a valid email...';
-        }
-        return $this->error;
-    }
-
     public function createMesssage()
     {
-        if(!$this->handleErrors()){
-            $formName = addslashes($_POST["personname"]);
-            $formEmail = addslashes($_POST["personmail"]);
-            $formMessage = addslashes($_POST["personmessage"]);
-
-            $to = "solarsystemproject@gmail.com";
-            $subject = "Interactive solar system - Feedback";
+        $formName = filter_input(INPUT_POST, "personname", FILTER_SANITIZE_SPECIAL_CHARS);
+        $formEmail = filter_input(INPUT_POST, "personmessage", FILTER_SANITIZE_SPECIAL_CHARS);
+        $formMessage =filter_input(INPUT_POST, "personmail", FILTER_SANITIZE_SPECIAL_CHARS);
+        if($formName && $formEmail && $formMessage){
+            $to = "192370@upf.br";
+            $subject = "Sistema solar interativo - Formulário";
             $body = "Name: $formName \r\n
             Email: $formEmail \r\n
             Message: $formMessage";
 
             $header = "From: " . $formEmail . "\r\n"
-                . "Reply-To: " . $formEmail . "\r\n"
-                . " x=Mailer:PHP/" . phpversion();
+            . "Reply-To: " . $formEmail . "\r\n"
+            . " x=Mailer:PHP/" . phpversion();
 
             return array($to, $subject, $body, $header);
         }
@@ -96,26 +76,25 @@ class FormValidate
           <h1 contenteditable class="titleAbout">Feedback message</h1>
             <?php
                 $f = new FormValidate();
-                $key = $f->createMesssage();
-                if(!$key){
-                    echo "<p>";
-                    echo "Error found: " . $f->error;
-                    echo "</p>";
-                }
-                else{
-                    if(mail($key[0], $key[1], $key[2], $key[3])){
-                        echo "<p>";
-                        echo "Thanks for your contribution!";
-                        echo "</p>";
+                $mail_array = $f->createMesssage();
+                if($mail_array){
+                    if(mail($mail_array[0], $mail_array[1], $mail_array[2], $mail_array[3])){
+                        echo "<p>Thanks for your contribution!</p><br/>";
+                    } else{
+                        echo "<p>Error: Message cannot be sent</p><br/>";
+                        echo "<p>Mail body: ". $mail_array[2] ."</p>";
                     }
-                    else{
-                        echo "<p>";
-                        echo "Error: Message was not sent! Please try again...";
-                        echo "<p>";
-                    }
+                } else {
+                    echo "<p>Error: Nothing has been posted!</p><br/>";
                 }
             ?>
         </div>
+        <span class="contButton"
+          ><a
+            onclick="transitionToPage('solarsystem.html')"
+            style="cursor: pointer"
+          ></a
+        ></span>
       </div>
     </div>
     <script src="main.js"></script>
