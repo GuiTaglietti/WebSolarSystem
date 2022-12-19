@@ -5,7 +5,7 @@ class FormValidate
     {
         $formName = filter_input(INPUT_POST, "personname", FILTER_SANITIZE_SPECIAL_CHARS);
         $formEmail = filter_input(INPUT_POST, "personmessage", FILTER_SANITIZE_SPECIAL_CHARS);
-        $formMessage =filter_input(INPUT_POST, "personmail", FILTER_SANITIZE_SPECIAL_CHARS);
+        $formMessage = filter_input(INPUT_POST, "personmail", FILTER_SANITIZE_SPECIAL_CHARS);
         if($formName && $formEmail && $formMessage){
             $to = "192370@upf.br";
             $subject = "Sistema solar interativo - Formulário";
